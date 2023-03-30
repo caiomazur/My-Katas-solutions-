@@ -10,19 +10,22 @@ Examples
 [1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd). */
 
 function findOdd(A) {
+  // Loop through the provided numbers array:
   for (let i = 0; i < A.length; i++) {
+    // Initialize a counter variable:
     let count = 0;
+    // Second loop to check how many times the element[i] appears in the array:
     for (j = 0; j < A.length; j++) {
       if (A[i] === A[j]) {
         count++;
       }
     }
+    // If the count is odd return the element [i] of the first loop:
     if (count % 2 !== 0) {
       console.log(A[i]);
       return A[i];
     }
   }
-  return;
 }
 
 findOdd([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]);
