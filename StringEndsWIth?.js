@@ -6,10 +6,10 @@ solution('abc', 'bc') // returns true
 solution('abc', 'd') // returns false */
 
 function solution(str, ending) {
-    return str.endsWith(ending);
-  }
+  return str.endsWith(ending);
+}
 
-  /* 
+/* 
   Another Solution:
   function solution(str, ending) {
   return str.slice(-ending.length) === ending;
