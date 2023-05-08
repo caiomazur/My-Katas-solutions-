@@ -67,8 +67,23 @@ OFF-TOPIC
 Some music to get in the mood for this kata :
 
 Street Fighter 2 - selection theme */
+function streetFighterSelection(fighters, position, moves) {
+  let chars = [];
+  let x = position[1];
+  let y = position[0];
 
-function streetFighterSelection(fighters, position, moves){
-   let newPosition = position
-    return "";
-  }
+  moves.forEach((move) => {
+    if (move === "left") {
+      x = x === 0 ? fighters[y].length - 1 : x - 1;
+    } else if (move === "right") {
+      x = x === fighters[y].length - 1 ? 0 : x + 1;
+    } else if (move === "up") {
+      y = y === 0 ? 0 : y - 1;
+    } else if (move === "down") {
+      y = y === fighters.length - 1 ? y : y + 1;
+    }
+    chars.push(fighters[y][x]);
+  });
+  console.log(chars);
+  return chars;
+}
