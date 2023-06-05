@@ -5,15 +5,14 @@ Write a function that takes an integer as input, and returns the number of bits 
 Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
 */
 
-var countBits = function(n) {
-    let count = 0;
-  const binary = (n >>> 0).toString(2).split("");
-  console.log(binary)
+var countBits = function (n) {
+  let count = 0;
+  const binary = n.toString(2).split("");
+  console.log(binary);
   binary.forEach((num) => {
-    if (num === '1') count++
-});
+    if (+num === 1) count++;
+  });
   return count;
 };
 
 const result = countBits(1234);
-console.log(result);
